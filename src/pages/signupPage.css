@@ -1,4 +1,4 @@
-.login-page {
+.signup-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     background-color: white;
   }
   
-  .login-container {
+  .signup-container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -26,15 +26,11 @@
   .logo {
     font-size: 2em;
     margin-right: 10px;
-    display: flex;
-    align-items: center;
   }
   
   .title {
     font-size: 2em;
     margin: 0;
-    display: flex;
-    align-items: center;
   }
   
   .description {
@@ -42,7 +38,7 @@
     margin-bottom: 1.5em;
   }
   
-  .login-form {
+  .signup-form {
     display: flex;
     flex-direction: column;
   }
@@ -55,7 +51,7 @@
     border-radius: 4px;
   }
   
-  .login-button {
+  .signup-button {
     padding: 0.75em;
     font-size: 1em;
     background-color: black;
@@ -65,12 +61,12 @@
     cursor: pointer;
   }
   
-  .signup-prompt {
+  .login-prompt {
     margin-top: 1.5em;
     font-size: 0.9em;
   }
   
-  .signup-prompt a {
+  .login-prompt a {
     color: #007bff;
     text-decoration: none;
   }

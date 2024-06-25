@@ -1,0 +1,48 @@
+.feed-page {
+    padding: 20px;
+  }
+  
+  .feed-header {
+    background-color: black;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-name {
+    color: white;
+    margin: 0;
+    flex: 1; /* Make title take most of the space */
+  }
+  
+  .search-container {
+    margin-top: 10px; /* Add some space between header and search bar */
+    display: flex;
+  }
+
+  .logo1 {
+    font-size: 2em;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 4px;
+    outline: none;
+    width: 100%; /* Already set for full width */
+    /* Add media query for mobile responsiveness */
+    @media only screen and (max-width: 768px) {
+      /* Adjust styles for smaller screens */
+      font-size: 0.8em; /* Reduce font size for better fit */
+    }
+  }
+  
+  .user-list {
+    margin-top: 20px;
+  }
+  
+  /* Styles for UserCard component (no changes needed) */
+  

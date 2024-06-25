@@ -1,0 +1,36 @@
+.user-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px; /* Increased padding for better spacing */
+    display: flex; /* Make user card container a flexbox */
+    align-items: center; /* Align content vertically within card */
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center; /* Already set in previous version */
+    flex: 1; /* Make user info take most of the space within card */
+  }
+  
+  .user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px; /* Adjust margin for better spacing */
+  }
+  
+  .user-details {
+    margin: 0; /* Remove any unnecessary margin */
+  }
+  
+  .view-profile-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto; /* Move button to the left side automatically */
+  }
+  
