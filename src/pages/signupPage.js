@@ -1,5 +1,5 @@
-import React from 'react';
-import './signupPage.css';
+import React from "react";
+import "./signupPage.css";
 
 const SignUpPage = () => {
   return (
@@ -9,25 +9,42 @@ const SignUpPage = () => {
           <span className="material-icons logo">groups</span>
           <h1 className="title">Sign Up</h1>
         </div>
-        <p className="description">Join us by filling out the information below</p>
+        <p className="description">
+          Join us by filling out the information below
+        </p>
         <form className="signup-form">
           <input type="text" placeholder="Name" className="input-field" />
           <input type="email" placeholder="Email" className="input-field" />
-          <input type="password" placeholder="Password" className="input-field" />
-          <input type="text" placeholder="Company Name" className="input-field" />
-          <input type="text" placeholder="Designation" className="input-field" />
-          <input type="text" placeholder="One-liner Intro" className="input-field" />
-          <input type="url" placeholder="LinkedIn URL" className="input-field" />
+          <input
+            type="password"
+            placeholder="Password"
+            className="input-field"
+          />
+          <input
+            type="text"
+            placeholder="Company Name"
+            className="input-field"
+          />
+          <input
+            type="text"
+            placeholder="Designation"
+            className="input-field"
+          />
+          <input
+            type="text"
+            placeholder="One-liner Intro"
+            className="input-field"
+          />
+          <input
+            type="url"
+            placeholder="LinkedIn URL"
+            className="input-field"
+          />
           <input type="url" placeholder="Twitter URL" className="input-field" />
           <input type="url" placeholder="GitHub URL" className="input-field" />
-          <select className="input-field">
-            <option value="" disabled selected>Attending as</option>
-            <option value="attendee">Attendee</option>
-            <option value="speaker">Speaker</option>
-            <option value="organizer">Organizer</option>
-            <option value="volunteer">Volunteer</option>
-          </select>
-          <button type="submit" className="signup-button">Sign Up</button>
+          <button type="submit" className="signup-button">
+            Sign Up
+          </button>
         </form>
         <p className="login-prompt">
           Already have an account? <a href="/">Log In</a>
@@ -35,6 +52,6 @@ const SignUpPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUpPage;

@@ -1,5 +1,5 @@
-import React from 'react';
-import './loginPage.css';
+import React from "react";
+import "./loginPage.css";
 
 const LoginPage = () => {
   return (
@@ -12,15 +12,21 @@ const LoginPage = () => {
         <p className="description">Conference networking starts here!</p>
         <form className="login-form">
           <input type="text" placeholder="Username" className="input-field" />
-          <input type="password" placeholder="Password" className="input-field" />
-          <button type="submit" className="login-button">Log In</button>
+          <input
+            type="password"
+            placeholder="Password"
+            className="input-field"
+          />
+          <button type="submit" className="login-button">
+            Log In
+          </button>
         </form>
         <p className="signup-prompt">
-            Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <a href="/signup">Sign up</a>
         </p>
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;

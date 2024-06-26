@@ -1,0 +1,75 @@
+.checkin-page {
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align to top */
+  align-items: center;
+}
+
+.checkin-header {
+  width: 100%;
+  padding: 20px;
+  background-color: white; /* White background */
+  display: flex;
+  justify-content: center; /* Center align the logo and title container */
+  margin-bottom: 20px;
+}
+
+.title-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  margin-right: 10px;
+  color: black; /* Black color for the logo */
+}
+
+.app-name {
+  color: black; /* Black text */
+  margin: 0;
+}
+
+.checkin-content {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.welcome-message {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.checkin-message {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.checkin-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkin-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
