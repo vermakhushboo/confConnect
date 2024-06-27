@@ -1,5 +1,5 @@
-import React from 'react';
-import './userCard.css';
+import React from "react";
+import "./userCard.css";
 
 const UserCard = ({ user }) => {
   return (
@@ -18,6 +18,6 @@ const UserCard = ({ user }) => {
       </div>
     </div>
   );
-}
+};
 
 export default UserCard;

@@ -26,7 +26,7 @@ const FeedPage = () => {
     <div className="feed-page">
       <div className="feed-header">
         <span className="material-icons logo1">groups</span>
-        <h1 className="app-name">ConfConnect</h1>
+        <h1 className="app-name-1">ConfConnect</h1>
       </div>
       <div className="search-container">
         <input type="text" placeholder="Search" className="search-bar" />
@@ -38,6 +38,6 @@ const FeedPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default FeedPage;

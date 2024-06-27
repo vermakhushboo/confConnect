@@ -88,6 +88,6 @@ const SignUpPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUpPage;
