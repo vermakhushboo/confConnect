@@ -17,35 +17,58 @@ const SignUpPage = () => {
     linkedin: '',
     twitter: '',
     github: '',
+    profilePic: null,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    if (e.target.name === 'profilePic') {
+      setFormData(prevState => ({
+        ...prevState,
+        profilePic: e.target.files[0], // Store the selected file
+      }));
+    } else {
+      const { name, value } = e.target;
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
+    console.log({formData});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const hashedPassword = await hashPassword(formData.password)
-    const user = {
-      name: formData.name,
-      email: formData.email,
-      password: hashedPassword,
-      companyName: formData.companyName,
-      designation: formData.designation,
-      intro: formData.intro,
-      socials: {
-        github: formData.github,
-        linkedin: formData.linkedin,
-        twitter: formData.twitter,
-      }
-    };
+    // const user = {
+    //   name: formData.name,
+    //   email: formData.email,
+    //   password: hashedPassword,
+    //   companyName: formData.companyName,
+    //   designation: formData.designation,
+    //   intro: formData.intro,
+    //   profileImg: formData.profilePic,
+    //   socials: {
+    //     github: formData.github,
+    //     linkedin: formData.linkedin,
+    //     twitter: formData.twitter,
+    //   }
+    // };
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('password', await hashPassword(formData.password));
+    formDataToSend.append('companyName', formData.companyName);
+    formDataToSend.append('designation', formData.designation);
+    formDataToSend.append('intro', formData.intro);
+    formDataToSend.append('socials[github]', formData.github);
+    formDataToSend.append('socials[linkedin]', formData.linkedin);
+    formDataToSend.append('socials[twitter]', formData.twitter);
+    formDataToSend.append('profileImg', formData.profilePic); 
 
     try {
-      const response = await axios.post('http://localhost:3000/users', user);
+      const response = await axios.post('http://localhost:3000/users', formDataToSend,{
+        'Content-Type': 'multipart/form-data',
+      });
       console.log('User saved successfully:', response.data);
       navigate('/');
     } catch (error) {
@@ -82,6 +105,7 @@ const SignUpPage = () => {
           <input type="url" name="github" placeholder="GitHub URL" className="input-field" onChange={handleChange} />
           <input type="url" name="linkedin" placeholder="LinkedIn URL" className="input-field" onChange={handleChange} />
           <input type="url" name="twitter" placeholder="Twitter URL" className="input-field" onChange={handleChange} />
+          <input type="file" name="profilePic" className="input-field" onChange={handleChange} required />
           <button type="submit" className="signup-button">Sign Up</button>
         </form>
         <p className="login-prompt">
