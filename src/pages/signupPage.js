@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './signupPage.css';
+import { hashPassword } from '../utils/hashUtils';
 
 const SignUpPage = () => {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -28,10 +29,11 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const hashedPassword = await hashPassword(formData.password)
     const user = {
       name: formData.name,
       email: formData.email,
-      password: formData.password,
+      password: hashedPassword,
       companyName: formData.companyName,
       designation: formData.designation,
       intro: formData.intro,
@@ -74,8 +76,8 @@ const SignUpPage = () => {
           <input type="text" name="name" placeholder="Name" className="input-field" onChange={handleChange} required />
           <input type="email" name="email" placeholder="Email" className="input-field" onChange={handleChange} required />
           <input type="password" name="password" placeholder="Password" className="input-field" onChange={handleChange} required />
-          <input type="text" name="company" placeholder="Company" className="input-field" onChange={handleChange} />
-          <input type="text" name="designation" placeholder="Designation" className="input-field" onChange={handleChange} required />
+          <input type="text" name="companyName" placeholder="Company" className="input-field" onChange={handleChange} />
+          <input type="text" name="designation" placeholder="Designation" className="input-field" onChange={handleChange} />
           <input type="text" name="intro" placeholder="One-liner Intro" className="input-field" onChange={handleChange} required />
           <input type="url" name="github" placeholder="GitHub URL" className="input-field" onChange={handleChange} />
           <input type="url" name="linkedin" placeholder="LinkedIn URL" className="input-field" onChange={handleChange} />
