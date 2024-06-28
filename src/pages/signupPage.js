@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './signupPage.css';
 import { hashPassword } from '../utils/hashUtils';
+import { MakeApiCall } from '../api/apicall';
 
 const SignUpPage = () => {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -66,9 +67,7 @@ const SignUpPage = () => {
     formDataToSend.append('profileImg', formData.profilePic); 
 
     try {
-      const response = await axios.post('http://localhost:3000/users', formDataToSend,{
-        'Content-Type': 'multipart/form-data',
-      });
+      const response = await MakeApiCall({method: 'post', path:'/users',body: formDataToSend, headers: {'Content-Type': 'multipart/form-data'}})
       console.log('User saved successfully:', response.data);
       navigate('/');
     } catch (error) {
@@ -105,7 +104,7 @@ const SignUpPage = () => {
           <input type="url" name="github" placeholder="GitHub URL" className="input-field" onChange={handleChange} />
           <input type="url" name="linkedin" placeholder="LinkedIn URL" className="input-field" onChange={handleChange} />
           <input type="url" name="twitter" placeholder="Twitter URL" className="input-field" onChange={handleChange} />
-          <input type="file" name="profilePic" className="input-field" onChange={handleChange} required />
+          <input type="file" name="profileImg" placeholder="Profile Image" className='input-field' />
           <button type="submit" className="signup-button">Sign Up</button>
         </form>
         <p className="login-prompt">
