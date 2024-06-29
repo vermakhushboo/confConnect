@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './signupPage.css';
 import { hashPassword } from '../utils/hashUtils';
@@ -34,12 +33,10 @@ const SignUpPage = () => {
         [name]: value,
       }));
     }
-    console.log({formData});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const hashedPassword = await hashPassword(formData.password)
     // const user = {
     //   name: formData.name,
     //   email: formData.email,

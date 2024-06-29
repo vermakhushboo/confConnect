@@ -6,7 +6,6 @@ import { Navigate } from 'react-router-dom';
 // };
 
 const ProtectedRoute = ({ isAuthenticated, isLoading, children }) => {
-    console.log({isAuthenticated, children, isLoading})
     if (isLoading) {
         return <div>Loading...</div>; // or any loading indicator you prefer
     }

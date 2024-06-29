@@ -1,0 +1,40 @@
+/* src/components/ErrorFallback.css */
+.error-fallback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+  }
+  
+  .error-content {
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error-content h1 {
+    font-size: 3rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+  }
+  
+  .error-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .error-content a {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .error-content a:hover {
+    text-decoration: underline;
+  }
+  

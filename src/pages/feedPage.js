@@ -6,7 +6,7 @@ import UserCard from '../components/userCard';
 
 const FeedPage = () => {
   const { eventId } = useParams();
-  console.log(eventId);
+  console.log({eventId});
   const [users, setUsers] = useState([]);
 
   useEffect(() => {

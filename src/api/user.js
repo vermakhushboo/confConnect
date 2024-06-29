@@ -9,8 +9,14 @@ export const LoginUser = async (username, password) => {
             password: await hashPassword(password),
         }
     });
-    console.log(response);
     localStorage.setItem('authToken', response.data.authToken);
     localStorage.setItem('refreshToken', response.data.refreshToken);
     return response;
+}
+
+export const GetCurrentUser = async () => {
+    const response = await MakeApiCall({
+        path:'/'
+    })
+    return response.data;
 }
