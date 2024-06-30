@@ -1,26 +1,43 @@
 .user-card {
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 15px; /* Increased padding for better spacing */
-  display: flex; /* Make user card container a flexbox */
-  align-items: center; /* Align content vertically within card */
+  padding: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .user-info {
   display: flex;
-  align-items: center; /* Already set in previous version */
-  flex: 1; /* Make user info take most of the space within card */
+  align-items: center;
+  flex: 1;
 }
 
-.user-info img {
+.profile-pic-container {
+  position: relative;
+  width: 50px; /* Same as img width */
+  height: 50px; /* Same as img height */
+  margin-right: 15px;
+}
+
+.profile-pic {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 15px; /* Adjust margin for better spacing */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5); /* Adjust scale factor as needed */
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better visibility */
 }
 
 .user-details {
-  margin: 0; /* Remove any unnecessary margin */
+  margin: 0;
 }
 
 .view-profile-button {
@@ -31,5 +48,5 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: auto; /* Move button to the left side automatically */
+  margin-left: auto;
 }

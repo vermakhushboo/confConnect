@@ -8,8 +8,10 @@ const UserCard = ({ user }) => {
         <img src="user.profileImage || https://via.placeholder.com/50" alt="User" />
         <div className="user-details">
         <h3 className="user-name">{user.UserInfo.name}</h3>
-          <p className="user-company">{user.companyName || 'Company Name'}</p>
-          <p className="user-designation">{user.designation}</p>
+          <p className="user-company">{user.UserInfo.companyName}</p>
+          <p className="user-designation">{user.UserInfo.designation}</p>
+          <p className="user-intro">{user.UserInfo.intro}</p>
+          <p className="user-profilePic">{user.UserInfo.profilePic}</p>
           {/* <p className="user-expertise">Expertise: {user.expertise.join(', ')}</p> */}
         </div>
         <button className="view-profile-button">View Profile</button>
